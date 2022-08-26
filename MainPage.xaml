@@ -1,0 +1,362 @@
+﻿<Page x:Class="proekt.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:proekt"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1500"
+      Title="MainPage" Loaded="Page_Loaded">
+
+    <Grid Background="White">
+        <Label x:Name="header" FontSize="16" FontFamily="Times New Roman" FontStyle="Italic" Margin="10,0,0,0"/>
+        <Button x:Name="exit" Content="Выход" FontFamily="Times New Roman" FontSize="14" HorizontalAlignment="Right" Width="60" Height="18" Margin="0,-20,28.5,772" BorderBrush="White" Foreground="Blue" Background="White" Click="Exit_Click"/>
+        <Menu Height="28.504" VerticalAlignment="Top" Width="1500" HorizontalAlignment="Left" Margin="0,33,0,0">
+            <MenuItem Header="Нормы" Height="28.504" Width="66.198" FontSize="14" FontFamily="Times New Roman">
+                <MenuItem Header="Лабораторные исследования" FontFamily="Times New Roman" FontSize="14">
+                    <MenuItem x:Name="OAK" Header="Общий анализ крови" FontFamily="Times New Roman" FontSize="14" Click="OAK_Click"/>
+                    <MenuItem x:Name="OAM" Header="Общий анализ мочи" FontFamily="Times New Roman" FontSize="14" Click="OAM_Click"/>
+                    <MenuItem x:Name="БАК" Header="Биохимический анализ крови" FontFamily="Times New Roman" FontSize="14" Click="БАК_Click"/>
+                    <MenuItem x:Name="Коагулограмма" Header="Коагулограмма" FontFamily="Times New Roman" FontSize="14" Click="Коагулограмма_Click"/>
+                    <MenuItem x:Name="Копрограмма" Header="Копрограмма" FontFamily="Times New Roman" FontSize="14" Click="Копрограмма_Click"/>
+                </MenuItem>
+                <MenuItem Header="Инструментальные исследования" FontFamily="Times New Roman" FontSize="14">
+                    <MenuItem x:Name="ЭКГ" Header="Электрокардиограмма" FontFamily="Times New Roman" FontSize="14" Click="ЭКГ_Click"/>
+                </MenuItem>
+                <MenuItem Header="Возрастные нормы" FontFamily="Times New Roman" FontSize="14">
+                    <MenuItem x:Name="weight" Header="Вес" FontFamily="Times New Roman" FontSize="14" Click="Weight_Click"/>
+                    <MenuItem x:Name="height" Header="Рост" FontFamily="Times New Roman" FontSize="14" Click="Height_Click"/>
+                    <MenuItem x:Name="head" Header="Окружность головы" FontFamily="Times New Roman" FontSize="14" Click="Head_Click"/>
+                    <MenuItem x:Name="thorax" Header="Окружность грудной клетки" FontFamily="Times New Roman" FontSize="14" Click="Thorax_Click"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Формулы" FontFamily="Times New Roman" FontSize="14">
+                <MenuItem x:Name="area" Header="Площадь поверхности тела" FontFamily="Times New Roman" FontSize="14" Click="Area_Click"/>
+                <MenuItem x:Name="ibm" Header="Индекс массы тела" FontFamily="Times New Roman" FontSize="14" Click="Ibm_Click"/>
+            </MenuItem>
+            <Separator/>
+            <MenuItem x:Name="aboutProgram" Header="О программе" FontFamily="Times New Roman" FontSize="14" Width="96.794" Click="aboutProgram_Click"/>
+        </Menu>
+        <Grid HorizontalAlignment="Left" Height="691.925" Margin="10,74.075,0,0" VerticalAlignment="Top" Width="198.788">
+            <StackPanel>
+                <Calendar HorizontalAlignment="Left" Margin="2.188,0,0,0" VerticalAlignment="Top" Height="177.567" Width="186.6"/>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="mainGrid" HorizontalAlignment="Left" Height="691.925" Margin="213.788,74.075,0,0" VerticalAlignment="Top" Width="965.6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="439*"/>
+                <ColumnDefinition Width="526*"/>
+            </Grid.ColumnDefinitions>
+            <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Height="681.925" VerticalAlignment="Bottom" Width="957.6" Margin="0,0,0,10" Grid.ColumnSpan="2">
+                <ScrollViewer x:Name="createFileScroll" Visibility="Visible" VerticalScrollBarVisibility="Visible" CanContentScroll="True" MaxHeight="690">
+                    <Grid x:Name="Canvas" Background="White">
+                        <StackPanel>
+                            <Label x:Name="entryLabel" Content="Первичный осмотр пациента" FontFamily="Times New Roman" FontSize="20" FontWeight="ExtraBold" HorizontalAlignment="Left" Margin="300,0,0,0"/>
+                            <Label x:Name="nameLabel" Content="Ф.И.О. пациента" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" Margin="0,30,0,0"/>
+                            <TextBox x:Name="nameTB" FontFamily="Times New Roman" FontSize="20" Width="500" Height="30" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+                            <Label x:Name="dateLabel" Content="Дата рождения пациента" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold"/>
+                            <ListBox x:Name="day" Height="60" Width="80" HorizontalAlignment="Left" FontFamily="Times New Roman" FontSize="20" Margin="5,0,0,0" SelectionChanged="Day_SelectionChanged">
+                                <ListBoxItem Content="01" IsSelected="True"/>
+                                <ListBoxItem>02</ListBoxItem>
+                                <ListBoxItem>03</ListBoxItem>
+                                <ListBoxItem>04</ListBoxItem>
+                                <ListBoxItem>05</ListBoxItem>
+                                <ListBoxItem>06</ListBoxItem>
+                                <ListBoxItem>07</ListBoxItem>
+                                <ListBoxItem>08</ListBoxItem>
+                                <ListBoxItem>09</ListBoxItem>
+                                <ListBoxItem>10</ListBoxItem>
+                                <ListBoxItem>11</ListBoxItem>
+                                <ListBoxItem>12</ListBoxItem>
+                                <ListBoxItem>13</ListBoxItem>
+                                <ListBoxItem>14</ListBoxItem>
+                                <ListBoxItem>15</ListBoxItem>
+                                <ListBoxItem>16</ListBoxItem>
+                                <ListBoxItem>17</ListBoxItem>
+                                <ListBoxItem>18</ListBoxItem>
+                                <ListBoxItem>19</ListBoxItem>
+                                <ListBoxItem>20</ListBoxItem>
+                                <ListBoxItem>21</ListBoxItem>
+                                <ListBoxItem>22</ListBoxItem>
+                                <ListBoxItem>23</ListBoxItem>
+                                <ListBoxItem>24</ListBoxItem>
+                                <ListBoxItem>25</ListBoxItem>
+                                <ListBoxItem>26</ListBoxItem>
+                                <ListBoxItem>27</ListBoxItem>
+                                <ListBoxItem>28</ListBoxItem>
+                                <ListBoxItem>29</ListBoxItem>
+                                <ListBoxItem>30</ListBoxItem>
+                                <ListBoxItem>31</ListBoxItem>
+                            </ListBox>
+                            <ListBox x:Name="month" Height="60" Width="80" HorizontalAlignment="Left" Margin="90,-60,0,0" FontFamily="Times New Roman" FontSize="20" SelectionChanged="Month_SelectionChanged">
+                                <ListBoxItem Content="01" IsSelected="True"/>
+                                <ListBoxItem>02</ListBoxItem>
+                                <ListBoxItem>03</ListBoxItem>
+                                <ListBoxItem>04</ListBoxItem>
+                                <ListBoxItem>05</ListBoxItem>
+                                <ListBoxItem>06</ListBoxItem>
+                                <ListBoxItem>07</ListBoxItem>
+                                <ListBoxItem>08</ListBoxItem>
+                                <ListBoxItem>09</ListBoxItem>
+                                <ListBoxItem>10</ListBoxItem>
+                                <ListBoxItem>11</ListBoxItem>
+                                <ListBoxItem>12</ListBoxItem>
+                            </ListBox>
+                            <ListBox x:Name="year" Height="60" Width="80" HorizontalAlignment="Left" Margin="175,-60,0,0" FontFamily="Times New Roman" FontSize="20" SelectionChanged="Year_SelectionChanged">
+                                <ListBoxItem Content="2003" IsSelected="True"/>
+                                <ListBoxItem>2004</ListBoxItem>
+                                <ListBoxItem>2005</ListBoxItem>
+                                <ListBoxItem>2006</ListBoxItem>
+                                <ListBoxItem>2007</ListBoxItem>
+                                <ListBoxItem>2008</ListBoxItem>
+                                <ListBoxItem>2009</ListBoxItem>
+                                <ListBoxItem>2010</ListBoxItem>
+                                <ListBoxItem>2011</ListBoxItem>
+                                <ListBoxItem>2012</ListBoxItem>
+                                <ListBoxItem>2013</ListBoxItem>
+                                <ListBoxItem>2014</ListBoxItem>
+                                <ListBoxItem>2015</ListBoxItem>
+                                <ListBoxItem>2016</ListBoxItem>
+                                <ListBoxItem>2017</ListBoxItem>
+                                <ListBoxItem>2018</ListBoxItem>
+                                <ListBoxItem>2019</ListBoxItem>
+                                <ListBoxItem>2020</ListBoxItem>
+                                <ListBoxItem>2021</ListBoxItem>
+                                <ListBoxItem>2022</ListBoxItem>
+                            </ListBox>
+                            <Label x:Name="sex" Content="Пол" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold"/>
+                            <RadioButton x:Name="sexFemale" Content="женский" FontFamily="Times New Roman" FontSize="20" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+                            <RadioButton x:Name="sexMale" Content="мужской" FontFamily="Times New Roman" FontSize="20" HorizontalAlignment="Left" Margin="130,-23,0,0"/>
+                            <Expander x:Name="complaints" Header="Жалобы" BorderBrush="Gray" BorderThickness="2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Margin="5,15,19.4,0">
+                                <ScrollViewer VerticalScrollBarVisibility="Visible" MaxHeight="50" CanContentScroll="True">
+                                    <RichTextBox x:Name="complaintsRTB" FontFamily="Times New Roman" FontSize="20" FontWeight="Normal" SpellCheck.IsEnabled="True" Language="ru-ru"/>
+                                </ScrollViewer>
+                            </Expander>
+                            <Expander x:Name="anamnesis" Header="Анамнез" BorderBrush="Gray" BorderThickness="2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Margin="5,15,19.4,0">
+                                <ScrollViewer VerticalScrollBarVisibility="Visible" MaxHeight="50" CanContentScroll="True">
+                                    <RichTextBox x:Name="anamnesisRTB" FontFamily="Times New Roman" FontSize="20" FontWeight="Normal" SpellCheck.IsEnabled="True" Language="ru-ru"/>
+                                </ScrollViewer>
+                            </Expander>
+                            <Expander x:Name="skin" Header="Кожа и слизистые" BorderBrush="Gray" BorderThickness="2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Margin="5,15,19.4,0">
+                                <ScrollViewer VerticalScrollBarVisibility="Visible" MaxHeight="50" CanContentScroll="True">
+                                    <RichTextBox x:Name="skinRTB" FontFamily="Times New Roman" FontSize="20" FontWeight="Normal" SpellCheck.IsEnabled="True" Language="ru-ru"/>
+                                </ScrollViewer>
+                            </Expander>
+                            <Expander x:Name="pulmo" Header="Дыхательная система" BorderBrush="Gray" BorderThickness="2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Margin="5,15,19.4,0">
+                                <ScrollViewer VerticalScrollBarVisibility="Visible" MaxHeight="50" CanContentScroll="True">
+                                    <RichTextBox x:Name="pulmoRTB" FontFamily="Times New Roman" FontSize="20" FontWeight="Normal" SpellCheck.IsEnabled="True" Language="ru-ru"/>
+                                </ScrollViewer>
+                            </Expander>
+                            <Expander x:Name="cardio" Header="Сердечно-сосудистая система" BorderBrush="Gray" BorderThickness="2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Margin="5,15,19.4,0">
+                                <ScrollViewer VerticalScrollBarVisibility="Visible" MaxHeight="50" CanContentScroll="True">
+                                    <RichTextBox x:Name="cardioRTB" FontFamily="Times New Roman" FontSize="20" FontWeight="Normal" SpellCheck.IsEnabled="True" Language="ru-ru"/>
+                                </ScrollViewer>
+                            </Expander>
+                            <Expander x:Name="gastro" Header="Желудочно-кишечный тракт" BorderBrush="Gray" BorderThickness="2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Margin="5,15,19.4,0">
+                                <ScrollViewer VerticalScrollBarVisibility="Visible" MaxHeight="50" CanContentScroll="True">
+                                    <RichTextBox x:Name="gastroRTB" FontFamily="Times New Roman" FontSize="20" FontWeight="Normal" SpellCheck.IsEnabled="True" Language="ru-ru"/>
+                                </ScrollViewer>
+                            </Expander>
+                            <Expander x:Name="bones" Header="Опорно-двигательный аппарат" BorderBrush="Gray" BorderThickness="2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Margin="5,15,19.4,0">
+                                <ScrollViewer VerticalScrollBarVisibility="Visible" MaxHeight="50" CanContentScroll="True">
+                                    <RichTextBox x:Name="bonesRTB" FontFamily="Times New Roman" FontSize="20" FontWeight="Normal" SpellCheck.IsEnabled="True" Language="ru-ru"/>
+                                </ScrollViewer>
+                            </Expander>
+                            <Expander x:Name="neuro" Header="Нервная система" BorderBrush="Gray" BorderThickness="2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Margin="5,15,19.4,0">
+                                <ScrollViewer VerticalScrollBarVisibility="Visible" MaxHeight="50" CanContentScroll="True">
+                                    <RichTextBox x:Name="neuroRTB" FontFamily="Times New Roman" FontSize="20" FontWeight="Normal" SpellCheck.IsEnabled="True" Language="ru-ru"/>
+                                </ScrollViewer>
+                            </Expander>
+                            <Expander x:Name="diagnosis" Header="Предварительный диагноз" BorderBrush="Gray" BorderThickness="2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Margin="5,15,19.4,0">
+                                <ScrollViewer VerticalScrollBarVisibility="Visible" MaxHeight="50" CanContentScroll="True">
+                                    <RichTextBox x:Name="diagnosisRTB" FontFamily="Times New Roman" FontSize="20" FontWeight="Normal" SpellCheck.IsEnabled="True" Language="ru-ru"/>
+                                </ScrollViewer>
+                            </Expander>
+                            <Expander x:Name="diagnostic" Header="План обследования" BorderBrush="Gray" BorderThickness="2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Margin="5,15,19.4,0">
+                                <ScrollViewer VerticalScrollBarVisibility="Visible" MaxHeight="50" CanContentScroll="True">
+                                    <RichTextBox x:Name="diagnosticRTB" FontFamily="Times New Roman" FontSize="20" FontWeight="Normal" SpellCheck.IsEnabled="True" Language="ru-ru"/>
+                                </ScrollViewer>
+                            </Expander>
+                            <Expander x:Name="therapy" Header="План лечения" BorderBrush="Gray" BorderThickness="2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Margin="5,15,19.4,0">
+                                <ScrollViewer VerticalScrollBarVisibility="Visible" MaxHeight="50" CanContentScroll="True">
+                                    <RichTextBox x:Name="therapyRTB" FontFamily="Times New Roman" FontSize="20" FontWeight="Normal" SpellCheck.IsEnabled="True" Language="ru-ru"/>
+                                </ScrollViewer>
+                            </Expander>
+                            <Label x:Name="doctor" FontFamily="Times New Roman" FontSize="20" Margin="5,10,0,0"/>
+                            <Label x:Name="date" FontFamily="Times New Roman" FontSize="20" Margin="5,10,0,0"/>
+                            <Button x:Name="readyButton" Content="Готово" Width="100" Height="20" FontFamily="Times New Roman" FontSize="14" HorizontalAlignment="Right" Margin="0,-20,20,0" Background="#FFCDCDCD" BorderBrush="#FFCDCDCD" Click="ReadyButton_Click"/>
+                            <Label Width="20"/>
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+        <Grid x:Name="commonBloodAnalysis" Background="White" Margin="1179.388,74.075,0,10" HorizontalAlignment="Left" Width="310.612" Visibility="Hidden">
+            <GroupBox Header="Общий анализ крови" FontWeight="Bold" HorizontalAlignment="Left" Height="647.925" Margin="0,10,0,0" VerticalAlignment="Top" Width="280.412" FontFamily="Times New Roman" FontSize="14" BorderThickness="1" BorderBrush="Gray">
+                <TextBlock FontWeight="Normal" HorizontalAlignment="Left" Margin="10,14.125,0,-13.1" TextWrapping="Wrap" VerticalAlignment="Top" Width="243.529" Height="647.8"><Run Text="Эритроциты"/><LineBreak/><Run/><Run Text="3.5-5.5 * 10^12/л"/><LineBreak/><Run/><LineBreak/><Run/><Run Text=" "/><Run Text="Гемоглобин"/><LineBreak/><Run/>
+                <Run Text="120-160 г/л"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Гематокрит"/><LineBreak/><Run/><Run Text="34.3-46.6 %"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Тромбоциты"/><LineBreak/><Run/><Run Text="180-360 * 10^9/л"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Лейкоциты"/><LineBreak/><Run/><Run Text="4-9 * 10^9/л"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="СОЭ"/><LineBreak/><Run/><Run Text="2-15 мм/час"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Эозинофилы"/><LineBreak/><Run/><Run Text="0-5 %"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Базофилы"/><LineBreak/><Run/><Run Text="0-1 %"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Лимфоциты"/><LineBreak/><Run/><Run Text="18-40 %"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Моноциты"/><LineBreak/><Run/><Run Text="2-9 %"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Сегментоядерные нейтрофилы"/><LineBreak/><Run/><Run Text="47-72 %"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Палочкоядерные нейтрофилы"/><LineBreak/><Run/><Run Text="1-6 %"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="MCV  78-94 fl"/><LineBreak/><Run/><Run Text="MCH  24-33 пг"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/></TextBlock>
+            </GroupBox>
+            <Button x:Name="closeButton_1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="230,10,0,0" Width="25" Height="25" ToolTip="Закрыть" Click="CloseButton_1_Click">
+                <Image Source="Resources/icons8-отмена-40.png" Height="19.4" Width="20.2" RenderTransformOrigin="0.52,0.5"/>
+            </Button>
+        </Grid>
+        <Grid x:Name="commonUrineAnalysis" Background="White" Margin="1179.388,74.075,0,10" HorizontalAlignment="Left" Width="310.612" Visibility="Hidden">
+            <GroupBox Header="Общий анализ крови" FontWeight="Bold" HorizontalAlignment="Left" Height="647.925" Margin="0,10,0,0" VerticalAlignment="Top" Width="280.412" FontFamily="Times New Roman" FontSize="14" BorderThickness="1" BorderBrush="Gray">
+                <TextBlock FontWeight="Normal" HorizontalAlignment="Left" Margin="10,14.125,0,-13.1" TextWrapping="Wrap" VerticalAlignment="Top" Width="243.529" Height="647.8"><Run Text="Цвет"/><LineBreak/><Run/><Run Text="Желтый, соломенно-желтый"/><LineBreak/><Run/><LineBreak/><Run/><Run Text=" "/><Run Text="Прозрачность"/><LineBreak/><Run/>
+                <Run Text="Прозрачная"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Кислотность"/><LineBreak/><Run/><Run Text="pH меньше 7"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Белок"/><LineBreak/><Run/><Run Text="до 0.033 г/л"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Сахар"/><LineBreak/><Run/><Run Text="до 0.8 ммоль/л"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Билирубин"/><LineBreak/><Run/><Run Text="Отсутствует"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Кетоновые тела"/><LineBreak/><Run/><Run Text="Отсутствуют"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Эритроциты"/><LineBreak/><Run/><Run Text="0-3 в поле зрения"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Лейкоциты"/><LineBreak/><Run/><Run Text="0-6 в поле зрения"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Бактерии"/><LineBreak/><Run/><Run Text="Отсутствуют"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Гиалиновые цилиндры"/><LineBreak/><Run/><Run Text="Единичные"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Соли"/><LineBreak/><Run/><Run Text="Отсутствуют"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Зернистые и восковые цилиндры"/><LineBreak/><Run/><Run Text="Отсутствуют"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/></TextBlock>
+            </GroupBox>
+            <Button x:Name="closeButton_2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="230,10,0,0" Width="25" Height="25" ToolTip="Закрыть" Click="CloseButton_2_Click">
+                <Image Source="Resources/icons8-отмена-40.png" Height="19.4" Width="20.2" RenderTransformOrigin="0.52,0.5"/>
+            </Button>
+        </Grid>
+        <Grid x:Name="biochemicalBloodAnalysis" Background="White" Margin="1179.388,74.075,0,10" HorizontalAlignment="Left" Width="310.612" Visibility="Hidden">
+            <GroupBox Header="Биохимический анализ крови" FontWeight="Bold" HorizontalAlignment="Left" Height="647.925" Margin="0,10,0,0" VerticalAlignment="Top" Width="280.412" FontFamily="Times New Roman" FontSize="14" BorderThickness="1" BorderBrush="Gray">
+                <TextBlock FontWeight="Normal" HorizontalAlignment="Left" Margin="10,14.125,0,-13.1" TextWrapping="Wrap" VerticalAlignment="Top" Width="243.529" Height="647.8"><Run Text="Общий белок: 64-83 г/л"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Альбумин: 33-50 г/л"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="С-реактивный белок: до 0.5 мг/л"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="АлАТ: до 40 Ед/л"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="АсАТ: до 40 Ед/л"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Альфа-амилаза: 27-100 Ед/л"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Щелочная фосфатаза: до 270 Ед/л"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Общий холестерин: 3.0-6.0 ммоль/л"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="ЛПНП: 2.2-4.8 ммоль/л"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="ЛПВП: 0.8-2.2 ммоль/л"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Глюкоза: 3.3-5.5 ммоль/л"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Фруктозамин: 205-285 мкмоль/л"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/>
+                <Run Text="Билирубин общий: 3.4-17.1 мкмоль/л"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Билирубин прямой: 0-3.4 мкмоль/л"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Креатинин: 62-115 мкмоль/л"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Мочевая кислота: 210-420 мкмоль/л"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Мочевина: 2.4-6.4 ммоль/л"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Железо: 11.6-30.4 мкмоль/л"/><LineBreak/><Run Text=" "/><LineBreak/><Run/><Run/><Run Text="Калий: 3.3-5.5 ммоль/л"/><LineBreak/><Run/></TextBlock>
+            </GroupBox>
+            <Button x:Name="closeButton_3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="230,10,0,0" Width="25" Height="25" ToolTip="Закрыть" Click="CloseButton_3_Click">
+                <Image Source="Resources/icons8-отмена-40.png" Height="19.4" Width="20.2" RenderTransformOrigin="0.52,0.5"/>
+            </Button>
+        </Grid>
+        <Grid x:Name="coagulogramma" Background="White" Margin="1179.388,74.075,0,10" HorizontalAlignment="Left" Width="310.612" Visibility="Hidden">
+            <GroupBox Header="Коагулограмма" FontWeight="Bold" HorizontalAlignment="Left" Height="647.925" Margin="0,10,0,0" VerticalAlignment="Top" Width="280.412" FontFamily="Times New Roman" FontSize="14" BorderThickness="1" BorderBrush="Gray">
+                <TextBlock FontWeight="Normal" HorizontalAlignment="Left" Margin="10,14.125,0,-13.1" TextWrapping="Wrap" VerticalAlignment="Top" Width="243.529" Height="647.8"><Run Text="АПТВ: 28.6-33.6 сек"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Протромбиновое время: 9.2-12.2 сек"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="ПТИ: 80-105 %"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="МНО: 0.9-1.5 у.е."/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Тромбиновое время: 18-24 сек"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Фибриноген: 2-4 г/л"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="РФМК: до 4 мг/100 мл"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="XIIа-зависимый фибринолиз: 4-10 мин"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Антитромбин III: 86-116 %"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Плазминоген: 71-101 %"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Волчаночный антикоагулянт: 0.7-1.19 у.е."/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Д-димеры: 33.5-727.5 нг/мл"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/>
+                <Run Text="Протеин С: 94-124 %"/><LineBreak/><Run/></TextBlock>
+            </GroupBox>
+            <Button x:Name="closeButton_4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="230,10,0,0" Width="25" Height="25" ToolTip="Закрыть" Click="CloseButton_4_Click">
+                <Image Source="Resources/icons8-отмена-40.png" Height="19.4" Width="20.2" RenderTransformOrigin="0.52,0.5"/>
+            </Button>
+        </Grid>
+        <Grid x:Name="coprogramma" Background="White" Margin="1179.388,74.075,0,10" HorizontalAlignment="Left" Width="310.612" Visibility="Hidden">
+            <GroupBox Header="Копрограмма" FontWeight="Bold" HorizontalAlignment="Left" Height="647.925" Margin="0,10,0,0" VerticalAlignment="Top" Width="280.412" FontFamily="Times New Roman" FontSize="14" BorderThickness="1" BorderBrush="Gray">
+                <TextBlock HorizontalAlignment="Left" Margin="10,14.125,0,-13.1" TextWrapping="Wrap" VerticalAlignment="Top" Width="243.529" Height="647.8" FontWeight="Normal"><Run Text="Консистенция: оформленный"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Цвет: коричневый"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Реакция(pH): нейтральная"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Стеркобилин: 75-350 мг/сут"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Скрытая кровь: отсутствует"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Растворимый белок: отсутствует"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Мышечные волокна: отсутствуют"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Соединительная ткань: отсутствует"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Нейтральный жир: отсутствует"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Жирные кислоты: отсутствуют"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Крахмал: отсутствует"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Йодофильная флора: отсутствует"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/>
+                <Run Text="Лейкоциты: единичые"/><LineBreak/><Run/></TextBlock>
+            </GroupBox>
+            <Button x:Name="closeButton_5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="230,10,0,0" Width="25" Height="25" ToolTip="Закрыть" Click="CloseButton_5_Click">
+                <Image Source="Resources/icons8-отмена-40.png" Height="19.4" Width="20.2" RenderTransformOrigin="0.52,0.5"/>
+            </Button>
+        </Grid>
+        <Grid x:Name="ecg" Background="White" Margin="1179.388,74.075,0,10" HorizontalAlignment="Left" Width="310.612" Visibility="Hidden">
+            <GroupBox Header="Электрокардиограмма" FontWeight="Bold" HorizontalAlignment="Left" Height="647.925" Margin="0,10,0,0" VerticalAlignment="Top" Width="280.412" FontFamily="Times New Roman" FontSize="14" BorderThickness="1" BorderBrush="Gray">
+                <TextBlock HorizontalAlignment="Left" Margin="10,14.125,0,-13.1" TextWrapping="Wrap" VerticalAlignment="Top" Width="243.529" Height="647.8" FontWeight="Normal"><Run Text="Зубец P: 0.1 сек"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Сегмент PQ: 0.08 сек"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Комплекс QRS: 0.9 сек"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Зубец T: 0.16-0.24 сек"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Зубец U: 0.25 сек"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Интервал PQ: 0.12-0.2 сек"/><LineBreak/><Run/>
+                <Run Text=" "/><LineBreak/><Run/><Run Text="Интервал QT: 0.35-0.44 сек"/><LineBreak/><Run/></TextBlock>
+            </GroupBox>
+            <Button x:Name="closeButton_6" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="230,10,0,0" Width="25" Height="25" ToolTip="Закрыть" Click="CloseButton_6_Click">
+                <Image Source="Resources/icons8-отмена-40.png" Height="19.4" Width="20.2" RenderTransformOrigin="0.52,0.5"/>
+            </Button>
+        </Grid>
+        <Grid x:Name="childWeight" Background="White" Margin="1179.388,74.075,0,10" HorizontalAlignment="Left" Width="310.612" Visibility="Hidden">
+            <GroupBox Header="Вес" FontWeight="Bold" HorizontalAlignment="Left" Height="647.925" Margin="0,10,0,0" VerticalAlignment="Top" Width="280.412" FontFamily="Times New Roman" FontSize="14" BorderThickness="1" BorderBrush="Gray">
+                <TextBlock  HorizontalAlignment="Left" Margin="10,14.125,0,-13.1" TextWrapping="Wrap" VerticalAlignment="Top" Width="243.529" Height="647.8" FontWeight="Normal" TextAlignment="Justify"><Run Text="Вес при рождении: около 3500 г"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Набор массы за первый год:"/><LineBreak/><Run/>
+                <Run Text="1-й месяц: + 600 г"/><LineBreak/><Run/><Run Text="2-й месяц: + 800 г"/><LineBreak/><Run/><Run Text="3-й месяц: + 800 г"/><LineBreak/><Run/><Run Text="4-й месяц: + 750 г"/><LineBreak/><Run/><Run Text="5-й месяц: + 700 г"/><LineBreak/><Run/><Run Text="6-й месяц: + 650 г"/><LineBreak/><Run/><Run Text="7-й месяц: + 600 г"/><LineBreak/><Run/>
+                <Run Text="8-й месяц: + 550 г"/><LineBreak/><Run/><Run Text="9-й месяц: + 500 г"/><LineBreak/><Run/><Run Text="10-й месяц: + 450 г"/><LineBreak/><Run/>
+                <Run Text="11-й месяц: + 400 г"/><LineBreak/><Run/><Run Text="12-й месяц: + 350 г"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="У детей от 1 года до 10 лет:"/>
+                <Run Text="[10 + 2 * n], где n - количество лет"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="У детей старше 10 лет:"/><LineBreak/><Run/><Run Text="[5 * n - 20], где n - количество лет"/><LineBreak/><Run/></TextBlock>
+            </GroupBox>
+            <Button x:Name="closeButton_7" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="230,10,0,0" Width="25" Height="25" ToolTip="Закрыть" Click="CloseButton_7_Click">
+                <Image Source="Resources/icons8-отмена-40.png" Height="19.4" Width="20.2" RenderTransformOrigin="0.52,0.5"/>
+            </Button>
+        </Grid>
+        <Grid x:Name="childHeight" Background="White" Margin="1179.388,74.075,0,10" HorizontalAlignment="Left" Width="310.612" Visibility="Hidden">
+            <GroupBox Header="Рост" FontWeight="Bold" HorizontalAlignment="Left" Height="647.925" Margin="0,10,0,0" VerticalAlignment="Top" Width="280.412" FontFamily="Times New Roman" FontSize="14" BorderThickness="1" BorderBrush="Gray">
+                <TextBlock  HorizontalAlignment="Left" Margin="10,14.125,0,-13.1" TextWrapping="Wrap" VerticalAlignment="Top" Width="243.529" Height="647.8" FontWeight="Normal" TextAlignment="Justify"><Run Text="Рост при рождении: 46-56 см"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="1-3 месяц: + 3 см ежемесячно"/><LineBreak/><Run/>
+                <Run Text="4-6 месяц: + 2.5 см ежемесячно"/><LineBreak/><Run/><Run Text="7-9 месяц: + 2 см ежемесячно"/><LineBreak/><Run/><Run Text="10-12 месяц: + 1-1.5 см ежемесячно"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="1-4 лет: + 8 см ежегодно"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/>
+                <Run Text="Старше 4 лет: + 6 см ежегодно"/><LineBreak/><Run/></TextBlock>
+            </GroupBox>
+            <Button x:Name="closeButton_8" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="230,10,0,0" Width="25" Height="25" ToolTip="Закрыть" Click="CloseButton_8_Click">
+                <Image Source="Resources/icons8-отмена-40.png" Height="19.4" Width="20.2" RenderTransformOrigin="0.52,0.5"/>
+            </Button>
+        </Grid>
+        <Grid x:Name="childHead" Background="White" Margin="1179.388,74.075,0,10" HorizontalAlignment="Left" Width="310.612" Visibility="Hidden">
+            <GroupBox Header="Окружность головы" FontWeight="Bold" HorizontalAlignment="Left" Height="647.925" Margin="0,10,0,0" VerticalAlignment="Top" Width="280.412" FontFamily="Times New Roman" FontSize="14" BorderThickness="1" BorderBrush="Gray">
+                <TextBlock  HorizontalAlignment="Left" Margin="10,14.125,0,-13.1" TextWrapping="Wrap" VerticalAlignment="Top" Width="243.529" Height="647.8" FontWeight="Normal" TextAlignment="Justify"><Run Text="При рождении: 34-38 см"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Первое полугодие: + 1.5 см ежемесячно"/><LineBreak/><Run/>
+                <Run Text="Второе полугодие: + 0.5 см ежемесячно"/><LineBreak/><Run/><Run Text="До 5 лет: + 1 см ежегодно"/><LineBreak/><Run/><Run Text="Старше 5 лет: + 0.6 см ежегодно"/><LineBreak/><Run/></TextBlock>
+            </GroupBox>
+            <Button x:Name="closeButton_9" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="230,10,0,0" Width="25" Height="25" ToolTip="Закрыть" Click="CloseButton_9_Click">
+                <Image Source="Resources/icons8-отмена-40.png" Height="19.4" Width="20.2" RenderTransformOrigin="0.52,0.5"/>
+            </Button>
+        </Grid>
+        <Grid x:Name="childThorax" Background="White" Margin="1179.388,74.075,0,10" HorizontalAlignment="Left" Width="310.612" Visibility="Hidden">
+            <GroupBox Header="Окружность грудной клетки" FontWeight="Bold" HorizontalAlignment="Left" Height="647.925" Margin="0,10,0,0" VerticalAlignment="Top" Width="280.412" FontFamily="Times New Roman" FontSize="14" BorderThickness="1" BorderBrush="Gray">
+                <TextBlock  HorizontalAlignment="Left" Margin="10,14.125,0,-13.1" TextWrapping="Wrap" VerticalAlignment="Top" Width="243.529" Height="647.8" FontWeight="Normal" TextAlignment="Justify"><Run Text="При рождении: 32-34 см"/><LineBreak/><Run/><Run Text=" "/><LineBreak/><Run/><Run Text="Первое полугодие: + 2 см ежемесячно"/><LineBreak/><Run/>
+                <Run Text="Второе полугодие: + 0.5 см ежемесячно"/><LineBreak/><Run/><Run Text="До 10 лет: + 1.5 см ежегодно"/><LineBreak/><Run/><Run Text="10-15 лет: + 3 см ежегодно"/><LineBreak/><Run/></TextBlock>
+            </GroupBox>
+            <Button x:Name="closeButton_10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="230,10,0,0" Width="25" Height="25" ToolTip="Закрыть" Click="CloseButton_10_Click">
+                <Image Source="Resources/icons8-отмена-40.png" Height="19.4" Width="20.2" RenderTransformOrigin="0.52,0.5"/>
+            </Button>
+        </Grid>
+        <Grid x:Name="areaOfBody" Background="White" Margin="1179.388,74.075,0,10" HorizontalAlignment="Left" Width="310.612" Visibility="Hidden">
+            <GroupBox Header="Площадь поверхности тела" FontFamily="Times New Roman" FontSize="14" FontWeight="Bold" Margin="0,0,20.8,64.8" BorderBrush="Gray">
+                <StackPanel>
+                    <Label Content="Рост (см):" Margin="0,20,0,0"/>
+                    <TextBox x:Name="heightTextBox" Height="28" Width="150" HorizontalAlignment="Left"/>
+                    <Label Content="Вес (кг):" Margin="0,20,0,0"/>
+                    <TextBox x:Name="weightTextBox" Height="28" Width="150" HorizontalAlignment="Left"/>
+                    <Button x:Name="areaButton" Height="28" Width="150" HorizontalAlignment="Left" Background="#FF8BB7F0" BorderBrush="#FF8BB7F0" Margin="0,30,0,0" Content="Рассчитать" Click="AreaButton_Click"/>
+                    <Label x:Name="areaLabel" Margin="0,20,0,0" Height="33.2" HorizontalAlignment="Left" Width="250" FontSize="16"/>
+                </StackPanel>
+            </GroupBox>
+            <Button x:Name="closeButton_11" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,0,0,0" Width="25" Height="25" ToolTip="Закрыть" Click="CloseButton_11_Click">
+                <Image Source="Resources/icons8-отмена-40.png" Height="19.4" Width="20.2" RenderTransformOrigin="0.52,0.5"/>
+            </Button>
+        </Grid>
+        <Grid x:Name="indexBodyMass" Background="White" Margin="1179.388,74.075,0,34" HorizontalAlignment="Left" Width="310.612" Visibility="Hidden">
+            <GroupBox Header="Индекс массы тела" FontFamily="Times New Roman" FontSize="14" FontWeight="Bold" Margin="0,0,20.8,35.6" BorderBrush="Gray">
+                <StackPanel>
+                    <Label Content="Рост (м):" Margin="0,20,0,0"/>
+                    <TextBox x:Name="heightTB" Height="28" Width="150" HorizontalAlignment="Left"/>
+                    <Label Content="Вес (кг):" Margin="0,20,0,0"/>
+                    <TextBox x:Name="weightTB" Height="28" Width="150" HorizontalAlignment="Left"/>
+                    <Button x:Name="indexButton" Height="28" Width="150" HorizontalAlignment="Left" Background="#FF8BB7F0" BorderBrush="#FF8BB7F0" Margin="0,30,0,0" Content="Рассчитать" Click="IndexButton_Click"/>
+                    <Label x:Name="indexLabel" Margin="0,20,0,0" Height="33.2" HorizontalAlignment="Left" Width="250" FontSize="16"/>
+                    <Label Content="ИМТ менее 18.5: ниже нормального веса" Foreground="Blue" Margin="0,20,0,0"/>
+                    <Label Content="ИМТ 18.5-25: нормальный вес" Foreground="Green" Margin="0,10,0,0"/>
+                    <Label Content="ИМТ 25-30: избыточный вес" Foreground="Red" Margin="0,10,0,0"/>
+                    <Label Content="ИМТ 30-35: ожирение I степени" Foreground="Red" Margin="0,10,0,0"/>
+                    <Label Content="ИМТ 35-40: ожирение II степени" Foreground="Red" Margin="0,10,0,0"/>
+                    <Label Content="ИМТ более 40: ожирение III степени" Foreground="Red" Margin="0,10,0,0"/>
+                </StackPanel>
+            </GroupBox>
+            <Button x:Name="closeButton_12" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,0,0,0" Width="25" Height="25" ToolTip="Закрыть" Click="CloseButton_12_Click">
+                <Image Source="Resources/icons8-отмена-40.png" Height="19.4" Width="20.2" RenderTransformOrigin="0.52,0.5"/>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,28 @@
+﻿<Page x:Class="proekt.StartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:proekt"
+      mc:Ignorable="d" 
+      d:DesignHeight="800"
+      Title="StartPage" Width="1500">
+    <Grid Background="White">
+        <GroupBox x:Name="enterGroupBox" Header="Вход" HorizontalAlignment="Left" Height="497.6" Margin="306.8,146.15,0,0" VerticalAlignment="Top" Width="400" FontFamily="Courier New" FontSize="20" BorderBrush="#0E4C92" BorderThickness="3" FontWeight="Bold" Foreground="#0E4C92">
+            <StackPanel>
+                <Label Content="Логин" HorizontalAlignment="Left" Margin="27,36,0,0" VerticalAlignment="Top" Width="138" FontFamily="Courier New" FontSize="20" Foreground="#0E4C92" FontWeight="Bold"/>
+                <TextBox x:Name="loginTextBox" Height="44" Margin="27,0,0,0" HorizontalAlignment="Left" Width="322" VerticalAlignment="Top" Foreground="Black" FontFamily="Courier New" FontSize="20" BorderBrush="#0E4C92"/>
+                <TextBlock TextWrapping="Wrap" Text="Логин должен состоять из букв А-Я, а-я, A-Z, a-z" Height="46" Margin="29,10,0,0" HorizontalAlignment="Left" Width="320" FontSize="12" FontFamily="Courier New" Foreground="#424242" TextAlignment="Justify"/>
+                <Label Content="Пароль" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Margin="27,10,0,0" FontFamily="Courier New" FontSize="20" Foreground="#0E4C92" FontWeight="Bold"/>
+                <PasswordBox x:Name="passwordTextBox" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="322"  Margin="27,0,0,0" Foreground="Black" FontFamily="Courier New" FontSize="20" BorderBrush="#0E4C92"/>
+                <TextBlock TextWrapping="Wrap" Text="Пароль должен содержать буквы А-Я, а-я, A-Z, a-z и цифры 1-9. Длина пароля не менее 6 и не более 20 символов." Height="46" Margin="29,10,0,0" HorizontalAlignment="Left" Width="320" FontSize="12" FontFamily="Courier New" Foreground="#424242" TextAlignment="Justify"/>
+                <Button x:Name="enterButton" Content="Войти" HorizontalAlignment="Left" VerticalAlignment="Top" Width="322" Height="44" Margin="29,10,0,0" FontFamily="Courier New" FontSize="20" Foreground="White" Background="#0E4C92" BorderBrush="#0E4C92" Click="EnterButton_Click"/>
+                <Button x:Name="loginButton" Content="Зарегистрироваться" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,10,0,0" FontSize="20" FontFamily="Courier New" Foreground="#0E4C92" Background="White" BorderBrush="White" Click="LoginButton_Click" Width="237.66"/>
+                <Label x:Name="errorLabel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29,10,0,0" Width="320" Height="34.6" FontFamily="Courier New" Foreground="Crimson" FontSize="16"/>
+            </StackPanel>
+        </GroupBox>
+        <Image HorizontalAlignment="Left" Height="134" Margin="974.8,168.6,0,0" VerticalAlignment="Top" Width="133" Source="Resources/stethoscope (1).png"/>
+        <Label Content="Добро пожаловать в Doctor Pro!" HorizontalAlignment="Left" Margin="792.4,325.2,0,0" VerticalAlignment="Top" Width="489" Foreground="#FF11B2EA" FontWeight="Bold" FontFamily="Courier New" FontSize="26"/>
+        <TextBlock HorizontalAlignment="Left" Height="224" Margin="792.4,397.6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="489" FontFamily="Courier New" FontSize="18" TextAlignment="Center"><Run Text="Мы рады приветствовать Вас в программе "/><Run/><LineBreak/><Run Text="Doctor Pro"/><Run Text="!"/><LineBreak/><Run Text="Данная программа разработана для врачей приемного отделения стационаров педиатрического профиля."/><LineBreak/><Run Text="Она позволяет создавать протоколы первичного осмотра пациент"/><Run Text="ов"/><Run Text=", обрабатывать и сохранять информацию"/><Run Text=", а также"/><Run Text=" многое другое..."/><LineBreak/><Run/><LineBreak/><Run Text="С целью защиты данных, пожалуйста, зарегистрируйтесь."/></TextBlock>
+    </Grid>
+</Page>
